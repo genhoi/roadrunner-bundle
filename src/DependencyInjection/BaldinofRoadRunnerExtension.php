@@ -7,7 +7,6 @@ use Baldinof\RoadRunnerBundle\EventListener\ConfigureVarDumperListener;
 use Baldinof\RoadRunnerBundle\EventListener\DoctrineMongoDBListener;
 use Baldinof\RoadRunnerBundle\EventListener\SentryListener;
 use Baldinof\RoadRunnerBundle\Http\Middleware\BlackfireMiddleware;
-use Baldinof\RoadRunnerBundle\Http\Middleware\NativeSessionMiddleware;
 use Baldinof\RoadRunnerBundle\Http\Middleware\SentryMiddleware;
 use Baldinof\RoadRunnerBundle\Worker\Configuration as WorkerConfiguration;
 use Nyholm\Psr7\Factory\Psr17Factory;
@@ -124,8 +123,6 @@ class BaldinofRoadRunnerExtension extends Extension
                 ->addArgument(new Reference('service_container'))
                 ->setAutoconfigured(true);
         }
-
-        $beforeMiddlewares[] = NativeSessionMiddleware::class;
 
         $container->setParameter('baldinof_road_runner.middlewares.default', ['before' => $beforeMiddlewares, 'after' => $lastMiddlewares]);
     }

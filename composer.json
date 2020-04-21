@@ -17,7 +17,7 @@
         }
     },
     "require": {
-        "php": "^7.3",
+        "php": "^7.1",
         "symfony/config": "^4.0 || ^5.0",
         "symfony/dependency-injection": "^4.0 || ^5.0",
         "symfony/http-kernel": "^4.0 || ^5.0",
@@ -26,8 +26,7 @@
         "symfony/psr-http-message-bridge": "^1.2",
         "psr/http-factory": "^1.0",
         "psr/http-server-handler": "^1.0",
-        "psr/http-server-middleware": "^1.0",
-        "dflydev/fig-cookies": "^2.0"
+        "psr/http-server-middleware": "^1.0"
     },
     "suggest": {
         "nyholm/psr7": "For a super lightweight PSR-7/17 implementation"

@@ -33,8 +33,6 @@ services:
     arguments: [ '@Baldinof\RoadRunnerBundle\Http\KernelHandler' ]
     public: true
 
-  Baldinof\RoadRunnerBundle\Http\Middleware\NativeSessionMiddleware: null
-
   baldinof_roadrunner.http_foundation_factory:
     class: 'Symfony\Bridge\PsrHttpMessage\Factory\HttpFoundationFactory'
 
