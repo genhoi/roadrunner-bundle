@@ -24,7 +24,7 @@ final class MiddlewareStack implements IteratorRequestHandlerInterface
     /**
      * @param RequestHandlerInterface|IteratorRequestHandlerInterface $requestHandler
      */
-    public function __construct(object $requestHandler)
+    public function __construct($requestHandler)
     {
         if (!($requestHandler instanceof RequestHandlerInterface) && !($requestHandler instanceof IteratorRequestHandlerInterface)) {
             throw new \InvalidArgumentException(sprintf('Request handler should implement "%s" or "%s", "%s" given.', RequestHandlerInterface::class, IteratorRequestHandlerInterface::class, get_class($requestHandler)));
@@ -48,7 +48,7 @@ final class MiddlewareStack implements IteratorRequestHandlerInterface
     /**
      * @param MiddlewareInterface|IteratorMiddlewareInterface $middleware
      */
-    public function pipe(object $middleware): void
+    public function pipe($middleware): void
     {
         if (!($middleware instanceof MiddlewareInterface) && !($middleware instanceof IteratorMiddlewareInterface)) {
             throw new \InvalidArgumentException(sprintf('Middleware should implement "%s" or "%s", "%s" given.', MiddlewareInterface::class, IteratorMiddlewareInterface::class, get_class($middleware)));
@@ -72,7 +72,7 @@ final class Runner implements RequestHandlerInterface
      * @param SplStack                                                $middlewares A stack of MiddlewareInterface or IteratorMiddlewareInterface
      * @param RequestHandlerInterface|IteratorRequestHandlerInterface $handler
      */
-    public function __construct(SplStack $middlewares, object $handler)
+    public function __construct(SplStack $middlewares, $handler)
     {
         $this->middlewares = $middlewares;
         $this->handler = $handler;
