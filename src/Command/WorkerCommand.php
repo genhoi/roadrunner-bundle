@@ -22,12 +22,14 @@ final class WorkerCommand extends Command
 
     public function configure(): void
     {
+        $help = <<<HELP
+This command should not be run manually but specified in a <info>.rr.yaml</info>
+configuration file.
+HELP;
+
         $this
             ->setDescription('Run the roadrunner worker')
-            ->setHelp(<<<EOF
-            This command should not be run manually but specified in a <info>.rr.yaml</info>
-            configuration file.
-            EOF);
+            ->setHelp($help);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
